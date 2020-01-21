@@ -126,20 +126,28 @@ function increasing(numbers) {
   if (numbers == undefined || numbers == []) {
   return undefined;
 
-  } else if (numbers.length < 3 || numbers.some(isNaN)) {
-    return undefined;
-  } else {
+  }
 
+  else if (numbers.length < 3 || numbers.some(isNaN)) {
+    return undefined;
+  }
+
+  else {
   for (let i = 1; i < numbers.length; i++) {
   if ((numbers[i - 1] + 1) === numbers[i]) {
   i++
+
   if ((numbers[i - 1] + 1) === numbers[i]) {
   return true;
   break;
-  } else {
+  }
+
+  else {
   continue;
   }
-  } else {
+  }
+
+  else {
   continue;
   }
   }
@@ -154,7 +162,9 @@ function everywhere(values, x) {
 
     if (!values || x === undefined || values.length < 1) {
        return false;
-     } else {
+     }
+
+     else {
        for (let i = 0; i < values.length - 1; i++) {
            if (values[i] === x) {
            result = 0;
@@ -165,7 +175,9 @@ function everywhere(values, x) {
            return false;
          }
        }
-     } if (result === 0) {
+     }
+
+     if (result === 0) {
        return true;
      }
 
@@ -173,9 +185,11 @@ function everywhere(values, x) {
 }
 
 function consecutive(numbers) {
+
   if (!numbers || numbers.length < 3) {
   return false;
 }
+
 for (let i = 0; i < numbers.length - 2; i++ ) {
   let index = numbers[i];
   let index_2 = numbers[i + 1];
@@ -183,9 +197,11 @@ for (let i = 0; i < numbers.length - 2; i++ ) {
   if (Number.isInteger(index) == false || Number.isInteger(index_2) == false || Number.isInteger(index_3) == false ) {
     return false;
   }
+
   if (index % 2 == 0 && index_2 % 2 == 0 && index_3 % 2 == 0) {
     return true;
   }
+
   else if (index % 2 == 1 && index_2 % 2 == 1 && index_3 % 2 == 1) {
     return true;
   }
@@ -194,7 +210,7 @@ return false;
 }
 
 function balance(numbers) {
-  
+
   let size = 0
   let sum1 = 0
   let sum2 = 0
