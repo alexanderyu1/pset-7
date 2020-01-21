@@ -21,6 +21,11 @@ function endsMeet(values, n) {
   let empty = [];
   let arr = [];
 
+  if (!values || values.length < n || n < 0) {
+  return arr;
+  }
+
+
 
 }
 
