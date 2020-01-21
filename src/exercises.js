@@ -194,10 +194,12 @@ return false;
 }
 
 function balance(numbers) {
+  
   let size = 0
   let sum1 = 0
   let sum2 = 0
   let count = 0
+
   if (!numbers || numbers.length < 2) {
     return false;
   }
@@ -214,11 +216,14 @@ function balance(numbers) {
   for (x = numbers.length; x > -1; x--) {
     sum1 = 0
     sum2 = 0
+
     for(y = numbers.length - x; y > -1; y--) {
       sum1 = sum1 + numbers[y]
     }
+
     for(a = numbers.length - 1; a > numbers.length - x; a--) {
       sum2 = sum2 + numbers[a]
+
     }
     if (sum2 == sum1) {
       count = 1
@@ -244,7 +249,7 @@ function clumps(values) {
   let clump = 0
   let count = 0
   let count2 = 0
-  
+
   for (x = 1; x < values.length; x++) {
     current = values[x]
     if (last === current) {
