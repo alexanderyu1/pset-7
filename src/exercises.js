@@ -22,10 +22,22 @@ function endsMeet(values, n) {
   let arr = [];
 
   if (!values || values.length < n || n < 0) {
-  return arr;
+    return arr;
   }
 
+  for (i = 0; i < n; i++) {
+    arr.push(values[i]);
+  }
 
+  for (z = values.length - n; z < values.length; z++) {
+    arr.push(values[z])
+  }
+
+  if (n === 0) {
+    return empty;
+  }
+
+  return arr
 
 }
 
