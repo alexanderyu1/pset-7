@@ -84,11 +84,55 @@ function difference(numbers) {
 }
 
 function max(number) {
-  // write your code here
+
+  if (!number || number.length < 3 || number.length % 2 == 0) {
+    return undefined;
+  }
+
+  if (number.some(isNaN)) {
+    return undefined;
+  }
+
+  let last = number[number.length - 1]
+  let middle = number[((number.length / 2) - 1) + 0.5]
+  let first = number[0]
+
+  if ((last > first) && (last > middle)) {
+    return last;
+  }
+
+  else if ((first > middle) && (first > last)) {
+    return first;
+  }
+
+  else if ((middle > last) && (middle > first)) {
+    return middle;
+  }
+
+  else {
+    return first;
+  }
 }
 
 function middle(values) {
-  // write your code here
+
+  let array = [];
+
+  if (!values || values.length < 3 || values.length % 2 == 0) {
+    return [];
+  }
+
+  let index = (values.length / 2) - 1 + 0.5;
+  let twoMiddle = values[index];
+  let oneMiddle = values[index - 1];
+  let threeMiddle = values[index + 1];
+
+  array.push(oneMiddle);
+  array.push(twoMiddle);
+  array.push(threeMiddle);
+
+  return array;
+
 }
 
 function increasing(numbers) {
