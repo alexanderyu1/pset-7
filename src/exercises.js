@@ -18,7 +18,9 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
 
-  
+  let empty = [];
+  let arr = [];
+
 
 }
 
