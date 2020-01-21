@@ -18,26 +18,19 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
 
-  let empty = [];
-  let arr = [];
-
   if (!values || values.length < n || n < 0) {
-    return arr;
+      return values = [];
   }
-
-  for (i = 0; i < n; i++) {
-    arr.push(values[i]);
+  else {
+      let array = [];
+      for (let i = 0; i < n; i++) {
+          array.push(values[i]);
+      }
+      for (let j = values.length - n; j < values.length; j++) {
+          array.push(values[j]);
+      }
+      return array;
   }
-
-  for (z = values.length - n; z < values.length; z++) {
-    arr.push(values[z])
-  }
-
-  if (n === 0) {
-    return empty;
-  }
-
-  return arr
 
 }
 
@@ -116,31 +109,67 @@ function max(number) {
 
 function middle(values) {
 
-  let array = [];
-
-  if (!values || values.length < 3 || values.length % 2 == 0) {
+  if(!values || values.length%2 === 0 || values.length < 3 || values == undefined){
     return [];
+  }else{
+    let sum = [];
+    for (let x = (values.length+1)/2; x >= (values.length-3)/2; x--){
+      sum.unshift(values[x]);
+    }
+    return sum;
   }
-
-  let index = (values.length / 2) - 1 + 0.5;
-  let twoMiddle = values[index];
-  let oneMiddle = values[index - 1];
-  let threeMiddle = values[index + 1];
-
-  array.push(oneMiddle);
-  array.push(twoMiddle);
-  array.push(threeMiddle);
-
-  return array;
 
 }
 
 function increasing(numbers) {
-  // write your code here
+
+  if (numbers == undefined || numbers == []) {
+  return undefined;
+
+  } else if (numbers.length < 3 || numbers.some(isNaN)) {
+    return undefined;
+  } else {
+
+  for (let i = 1; i < numbers.length; i++) {
+  if ((numbers[i - 1] + 1) === numbers[i]) {
+  i++
+  if ((numbers[i - 1] + 1) === numbers[i]) {
+  return true;
+  break;
+  } else {
+  continue;
+  }
+  } else {
+  continue;
+  }
+  }
+  return false;
+  }
+
 }
 
 function everywhere(values, x) {
-  // write your code here
+
+    var result;
+
+    if (!values || x === undefined || values.length < 1) {
+       return false;
+     } else {
+       for (let i = 0; i < values.length - 1; i++) {
+           if (values[i] === x) {
+           result = 0;
+         } else if (values[i - 1] === x || values[i + 1] === x) {
+           result = 0;
+         } else {
+           result = 1;
+           return false;
+         }
+       }
+     } if (result === 0) {
+       return true;
+     }
+
+
 }
 
 function consecutive(numbers) {
