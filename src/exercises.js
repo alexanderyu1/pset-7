@@ -42,7 +42,13 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+
+  let difference = 0;
+  let large = 0;
+  let small = 0;
+  let counter = 0;
+
+
 }
 
 function max(number) {
